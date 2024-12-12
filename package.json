@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon src/intex.js"
+    "dev": "nodemon -r dotenv/config --experimental-json-modules src/intex.js"
   },
   "keywords": [
     "javascript",
@@ -13,5 +13,11 @@
     "chai"
   ],
   "author": "codewithshubham",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongodb": "^6.12.0",
+    "mongoose": "^8.8.4"
+  }
 }
