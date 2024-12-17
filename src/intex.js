@@ -1,5 +1,5 @@
 import app  from "./app.js";
-import connectDB from "./db/intex.js";
+import connectDB from "./db/intex.db.js";
 import dotenv from "dotenv";
 
 dotenv.config({
@@ -9,7 +9,7 @@ dotenv.config({
 connectDB()
 .then(()=>{
     app.listen(process.env.PORT || 8000,()=>{
-        console.log(`server has been connect at port: ${process.env.PORT}`)
+        console.log(`server is running at port: ${process.env.PORT}`)
     })
     
 })
