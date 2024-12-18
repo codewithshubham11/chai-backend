@@ -1,4 +1,4 @@
-import app  from "./app.js";
+import {app}  from "./app.js";
 import connectDB from "./db/intex.db.js";
 import dotenv from "dotenv";
 

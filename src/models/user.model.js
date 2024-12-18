@@ -1,4 +1,4 @@
-import mongoose, { model, Schema } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 import { JsonWebToken } from "jsonwebtoken";
 import bcrypt from bcrypt;
 
@@ -74,7 +74,7 @@ userSchema.methods.generateAccessToken=function(){
 )
 }
 
-userSchema.methods.generateAccessToken=function(){
+userSchema.methods.generateRefreshToken=function(){
     return JsonWebToken.sign({
         _id:this._id,
     },
