@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
-import { JsonWebToken } from "jsonwebtoken";
-import bcrypt from bcrypt;
+import JsonWebToken from "jsonwebtoken";
+import bcrypt from "bcrypt";
 
 
 const userSchema = new Schema({
@@ -19,7 +19,7 @@ const userSchema = new Schema({
         lowerCase: true,
         trim: true,
     },
-    fullname: {
+    fullName: {
         type: String,
         required: true,
         trim: true,
@@ -34,7 +34,7 @@ const userSchema = new Schema({
     },
     watchHistory: [
         {
-            type: Schema.Type.ObjectId,
+            type: Schema.Types.ObjectId,
             ref: "Video"
         }
     ],
@@ -53,7 +53,7 @@ const userSchema = new Schema({
 userSchema.pre("save",async function(next)  {
     if (!this.isModified("password")) return next();
 
-     this.password=bcrypt.hash(this.password,10)
+     this.password= await bcrypt.hash(this.password,10)
     next();   
 })
 userSchema.methods.isPasswordCorrect=async function  (password) {

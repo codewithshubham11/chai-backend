@@ -32,7 +32,7 @@ const videoSchema = new Schema({
         default: true
     },
     owner: {
-        type: Schema.Type.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: "User"
     },
 },
